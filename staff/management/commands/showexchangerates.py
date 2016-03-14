@@ -1,7 +1,6 @@
 from django.core.management.base import BaseCommand
-
-import urllib
 from bs4 import BeautifulSoup
+import urllib
 
 
 class Command(BaseCommand):
@@ -10,7 +9,6 @@ class Command(BaseCommand):
     URL2 = 'http://finance.i.ua/'
 
     def handle(self, *args, **options):
-
         html = self.get_html(self.URL)
         html2 = self.get_html(self.URL2)
         self.parse(html)
