@@ -13,6 +13,6 @@ class Command(BaseCommand):
             doc = Document.objects.filter(education__icontains=item)
             if doc.exists():
                 for d in doc:
-                    self.stdout.write("%s" % d)
+                    self.stdout.write("%s" % d.people_id.name)
             else:
                 raise CommandError('Education "%s" does not exist' % item)
