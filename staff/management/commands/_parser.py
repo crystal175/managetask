@@ -26,9 +26,9 @@ def parse(html):
                    class_='mfcur-thead-title').contents[0].strip().upper(),
         th[2].get_text())
 
-    rows = table.find_all('tr')[1:4]
     data = []
     data.append(head)
+    rows = table.find_all('tr')[1:4]
     for row in rows:
         td = row.find_all('td')
         td0 = td[0].text.strip()
